@@ -5,19 +5,19 @@ import AppContainer from './src/components/app-container';
 const Drawer = createDrawerNavigator();
 import MainScreen from './src/screens/main';
 import AboutScreen from './src/screens/about';
+import Sidebar from './src/components/sidebar';
 const App = () => {
   return (
     <AppContainer>
       {/* <Navigator /> */}
       <Drawer.Navigator
         initialRouteName="Main"
-        //   drawerContent={props => <Sidebar {...props} />}
-        // screenOptions={{
-        //   headerShown: false,
-        //   drawerType: 'back',
-        //   overlayColor: '#00000000',
-        // }}
-      >
+        drawerContent={props => <Sidebar {...props} />}
+        screenOptions={{
+          headerShown: false,
+          drawerType: 'back',
+          overlayColor: '#00000000',
+        }}>
         <Drawer.Screen name="Main" component={MainScreen} />
         <Drawer.Screen name="About" component={AboutScreen} />
       </Drawer.Navigator>
